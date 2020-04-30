@@ -1,6 +1,6 @@
 import threading, http.server, socketserver
 import RPi.GPIO as GPIO
-import http.client
+import requests
 import ast
 from collections import defaultdict
 from time import sleep
@@ -12,9 +12,7 @@ class Values:
         self.values = defaultdict(lambda : "0")
 
     def set(self, key, value):
-        updater = http.client.HTTPConnection('http://192.168.0.3', 8080, timeout=20)
-        updater.request("GET", "/set?"+str(key)+"="+str(value))
-        updater.close()      
+        updater = requests.get('http://192.168.0.3:8080/set?'+str(key)+"="+str(value))    
         
         self.values[str(key)]=str(value)
 
@@ -30,10 +28,9 @@ class Values:
 
 class Client:
     def __init__(self):
-        connection = http.client.HTTPConnection('http://192.168.0.3', 8080, timeout=20)
         while True:
-            connection.request("GET", "/get")
-            values.values = ast.literal_eval(connection.getresponse())
+            connection = requests.get("http://192.168.0.3:8080/get")
+            values.values = ast.literal_eval(connection.text)    
             sleep(2)
 
 class Inputs:
