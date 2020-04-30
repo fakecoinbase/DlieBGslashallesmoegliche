@@ -5,6 +5,11 @@ import ast
 from collections import defaultdict
 from time import sleep
 
+
+IP = "http://192.168.0.3"
+TIME = 2
+
+
 global values
 
 class Values:
@@ -12,8 +17,11 @@ class Values:
         self.values = defaultdict(lambda : "0")
 
     def set(self, key, value):
-        updater = requests.get('http://192.168.0.3:8080/set?'+str(key)+"="+str(value))    
-        
+        try:
+            updater = requests.get(IP+':8080/set?'+str(key)+"="+str(value))
+        except:
+            print("Fehler")
+
         self.values[str(key)]=str(value)
 
     def get(self, key):
@@ -29,9 +37,12 @@ class Values:
 class Client:
     def __init__(self):
         while True:
-            connection = requests.get("http://192.168.0.3:8080/get")
-            values.values = ast.literal_eval(connection.text)    
-            sleep(2)
+            try:
+                connection = requests.get(IP+":8080/get")
+                values.values = ast.literal_eval(connection.text)    
+            except:
+            	 print("Fehler")
+            sleep(TIME)
 
 class Inputs:
     def __init__(self):
@@ -59,9 +70,11 @@ class Outputs:
 
     def setupOutputs(self):
         GPIO.setup(15, GPIO.OUT)
+        GPIO.setup(18, GPIO.OUT)
 
     def setOutputs(self):
-        self.set(15, values.get(1))
+        self.set(15, values.get(3))
+        self.set(18, values.get('s1'))
         
     def set(self, gpio, value):
         if value is "0":
