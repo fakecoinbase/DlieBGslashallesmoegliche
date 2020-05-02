@@ -2,7 +2,7 @@ import coinbasepro as cbp
 import time
 
 ethPrice = 100.0
-dt = 0.05
+dt = 0.01
 
 def buy():
     f = open("eur.txt", "r")
@@ -63,6 +63,9 @@ def shouldBuy():
 
     if qt > 1 and qt-1 > dt:
         dt = abs(qt-1)
+        f = open("dt.txt", "w")
+        f.write(str(dt))
+        f.close()
         return True
     else:
         return False
@@ -77,6 +80,9 @@ def shouldSell():
 
     if qt < 1 and abs(qt-1) > dt:
         dt = abs(qt-1)
+        f = open("dt.txt", "w")
+        f.write(str(dt))
+        f.close()
         return True
     else:
         return False
@@ -86,6 +92,9 @@ while True:
     eth = client.get_product_ticker("ETH-EUR")
 
     ethPrice = float(eth["price"])
+    f = open("dt.txt", "r")
+    dt = float(f.read())
+    f.close()
 
     if nextBuy():
         if shouldBuy():
@@ -94,4 +103,4 @@ while True:
         if shouldSell():
             sell()
 
-    time.sleep(60*60)
+    time.sleep(120)
