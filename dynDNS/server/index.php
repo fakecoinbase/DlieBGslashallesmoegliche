@@ -11,5 +11,25 @@ header('Location: http://'.$ip.'/');
 }
 ?>
 
-Schwering Software DynDNS Service.
+<h4>Schwering Software DynDNS Service.</h4>
+<br>
+
+<?php
+$files = scandir("/var/www/lokal/dynDNS");
+
+foreach($files as $file)
+{
+if(strpos($file, ".ip"))
+{
+?>
+<a href="index.php?<?php print(str_replace(".ip","",$file));?>">
+<?php
+print(str_replace(".ip","",$file));
+?>
+</a>
+<br>
+<?php
+}
+}
+?>
 
