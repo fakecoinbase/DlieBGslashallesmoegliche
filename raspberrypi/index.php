@@ -20,6 +20,13 @@ Apache2 und PHP:<br>
 </p>
 
 <p>
+Statische IPv6 Interface-ID:<br>
+<code>sudo nano /etc/dhcpcd.conf</code>
+<code style="margin-left:2em;">slaac hwaddr</code>
+<code style="margin-left:2em;">#slaac private</code>
+</p>
+
+<p>
 SSL:<br>
 <code>sudo apt-get install python-certbot-apache</code><br>
 <code>sudo certbot --apache</code><br>
@@ -37,7 +44,8 @@ Pi-hole:<br>
 
 <p>
 OpenVPN:<br>
-<code>wget https://git.io/vpn -O openvpn-install.sh</code><br>
+<code>curl -O https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-install.sh</code><br>
+<code>chmod +x openvpn-install.sh</code><br>
 <code>./openvpn-install.sh</code>
 </p>
 
