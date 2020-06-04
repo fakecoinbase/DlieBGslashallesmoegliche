@@ -1,6 +1,0 @@
-<?php
-include("functions.php");
-deleteEntry($data, $_GET["id"]);
-?>
-
-<meta http-equiv="refresh" content="110; URL=index.php">
