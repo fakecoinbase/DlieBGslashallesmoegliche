@@ -1,0 +1,33 @@
+\BOOKMARK [1][-]{section.1}{Einleitung}{}% 1
+\BOOKMARK [1][-]{section.2}{Definitionen}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Graph}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Weg}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{K\374rzester Weg}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Dijkstra-Algorithmus}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Pseudocode}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Erkl\344rung}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{Beispiel}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.4}{Beweis}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.5}{Hinweise zur Implementierung}{section.3}% 11
+\BOOKMARK [3][-]{subsubsection.3.5.1}{Grundlegender Aufbau der Implementierung}{subsection.3.5}% 12
+\BOOKMARK [3][-]{subsubsection.3.5.2}{Heap Queue}{subsection.3.5}% 13
+\BOOKMARK [3][-]{subsubsection.3.5.3}{Bedienung}{subsection.3.5}% 14
+\BOOKMARK [1][-]{section.4}{Bellman-Ford-Algorithmus}{}% 15
+\BOOKMARK [2][-]{subsection.4.1}{Pseudocode}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.2}{Erkl\344rung}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.3}{Beispiel}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.4}{Hinweise zur Implementation}{section.4}% 19
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Grundlegender Aufbau der Implementierung}{subsection.4.4}% 20
+\BOOKMARK [3][-]{subsubsection.4.4.2}{Bedienung}{subsection.4.4}% 21
+\BOOKMARK [2][-]{subsection.4.5}{Vergleich zu Dijkstra}{section.4}% 22
+\BOOKMARK [3][-]{subsubsection.4.5.1}{Vorteile}{subsection.4.5}% 23
+\BOOKMARK [3][-]{subsubsection.4.5.2}{Nachteile}{subsection.4.5}% 24
+\BOOKMARK [1][-]{section.5}{Ausblick}{}% 25
+\BOOKMARK [2][-]{subsection.5.1}{Navigationssysteme}{section.5}% 26
+\BOOKMARK [3][-]{subsubsection.5.1.1}{GPS}{subsection.5.1}% 27
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Allgemeine Routenbestimmung}{subsection.5.1}% 28
+\BOOKMARK [3][-]{subsubsection.5.1.3}{Cloudbasierte Verkehrserkennung und Echtzeitdaten}{subsection.5.1}% 29
+\BOOKMARK [3][-]{subsubsection.5.1.4}{Datenspeicherung}{subsection.5.1}% 30
+\BOOKMARK [1][-]{section.6}{Fazit}{}% 31
+\BOOKMARK [1][-]{section.7}{Quellen-/Literaturverzeichnis}{}% 32
+\BOOKMARK [1][-]{section.8}{Selbstst\344ndigkeitserkl\344rung}{}% 33
